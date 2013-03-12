@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.username = auth.info.nickname
       user.name = auth.info.name
+      user.email = auth.info.email
     end
   end
 
@@ -44,6 +45,7 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
   
   
 end

@@ -14,6 +14,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+  require 'omniauth-facebook'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -215,8 +216,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
-  # config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_SECRET_ID"]
-  
+  config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_SECRET_ID"]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
