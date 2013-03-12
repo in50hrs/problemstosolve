@@ -1,0 +1,57 @@
+<style>
+.home-content {
+	text-align: center;
+}
+
+.problem {
+	color: #999999;
+	margin-top: 60px;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 30px;
+	text-align: center;
+}
+.bqstart {
+	float: left;
+	height: 45px;
+	margin-top: -20px;
+	padding-top: 45px;
+	margin-bottom: -50px;
+	font-size: 700%;
+	color: #999999;
+}
+
+.bqend {
+	float: right;
+	height: 15px;
+	margin-top: 0px;
+	padding-top: 35px;
+	font-size: 700%;
+	color: #999999;
+}
+</style>
+
+<div class="container-narrow">
+	<div class="row-fluid">
+		<div class="span4">
+			<%= image_tag "logo.png"%>
+			<h3 class="muted">Problems to solve</h3>
+		</div>
+		<div class="span8">
+			<p class="problem"> 
+				<span class="bqstart">&#8220;</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting fdsffgvreg <br \><b>Shayon , Founder and CEO at To be delivered</b><span class="bqend">&#8221;</span>
+			</p>
+		</div>
+	</div>
+	<hr>
+	<div class="home-content">
+		<h2>Looking for real world problems to solve? Step right in.</h2>
+		<a class="btn btn-success" type="button" href="create-account.html"> Create Account</a>
+		<button class="btn btn-info" type="button">Sign in </button>
+		<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+	</div>
+	<hr>
+	<footer>
+		<b>Upcoming events:</b> <a href="http://in50hrs.com/bangalore" target="_blank">Bangalore 2nd Edition, Mar 15 - 17</a>
+		</footer>
+</div>
