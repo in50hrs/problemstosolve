@@ -17,6 +17,6 @@ production:
     adapter: mysql
     encoding: utf8
     database: temp_production
-    username: root
+    username:     
     password: 
     socket: /tmp/mysql.sock
