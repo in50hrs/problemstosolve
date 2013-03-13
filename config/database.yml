@@ -18,5 +18,5 @@ production:
     encoding: utf8
     database: problemstosolve
     username: root
-    password: <%= begin IO.read("/home/pwd.txt") rescue "" end %>
+    password: <%= ENV['PWD'] %>
     socket: /tmp/mysql.sock
