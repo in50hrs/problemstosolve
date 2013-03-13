@@ -1,4 +1,6 @@
 class ProblemsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:main]  
+  
   def new
     @problem = Problem.new
     @user = User.find(params[:user_id])
