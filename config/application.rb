@@ -62,12 +62,14 @@ module Problemstosolve
     # Loads app config from /config/env_vars.yml
     require 'yaml'
     rails_root = Rails.root || File.dirname(__FILE__) + '/../..'
-    config = YAML.load_file(rails_root.to_s + '/config/env_vars.yml')
+    config = YAML.load_file(rails_root.to_s + '/config/env_vars_sample.yml')
     if config.key?(Rails.env) && config[Rails.env].is_a?(Hash)
       config[Rails.env].each do |key, value|
         ENV[key] = value.to_s
       end
     end
+    
+    
     
     
   end
