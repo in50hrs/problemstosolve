@@ -7,14 +7,18 @@ gem 'rails', '3.2.12'
 
 
 group :development, :test do
-  gem 'sqlite3'
+  gem "sqlite3", "~> 1.3.7"
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl'
+  gem 'capistrano'
 end
 
 group :production do
   gem 'mysql2'
+  gem 'activerecord-mysql-adapter'
+  gem 'execjs'
+  gem "therubyracer"
 end
 
 # Gems used only for assets and not required
@@ -29,16 +33,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-
-# Deploy with Capistrano
-gem 'capistrano'
-gem 'activerecord-mysql-adapter'
-gem 'execjs'
-gem "therubyracer"
-gem "activerecord-jdbcsqlite3-adapter"

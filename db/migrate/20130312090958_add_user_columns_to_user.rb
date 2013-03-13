@@ -1,6 +1,6 @@
 class AddUserColumnsToUser < ActiveRecord::Migration
   def change
-    add_column :users, :username, :String
-    add_column :users, :name, :String
+    add_column :users, :username, :string
+    add_column :users, :name, :string
   end
 end
