@@ -40,3 +40,5 @@ gem 'omniauth-google-oauth2'
 gem 'capistrano'
 gem 'activerecord-mysql-adapter'
 gem 'execjs'
+gem "therubyracer"
+gem "activerecord-jdbcsqlite3-adapter"
