@@ -16,4 +16,4 @@
 
 /config/env_vars.yml
 /config/deploy.rb
-
+/config/database.yml
