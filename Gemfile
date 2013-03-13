@@ -37,4 +37,4 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+ gem 'capistrano'
