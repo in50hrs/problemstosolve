@@ -9,3 +9,19 @@
 .home-content {
 	margin: 10px 0;
 }
+
+.problem {
+	color: #999999;
+	margin-top: 60px;
+	font-size: 46px;
+	font-weight: normal;
+	line-height: 50px;
+	text-align: center;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}

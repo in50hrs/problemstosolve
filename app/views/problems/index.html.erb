@@ -1,2 +1,24 @@
-<h1>Problems#index</h1>
-<p>Find me in app/views/problems/index.html.erb</p>
+<% @title = "Problems posted by #{@user.name}"%>
+<%= render 'layouts/nav' %>
+<%= render 'layouts/topnav' %>
+<div class="home-content">
+	<!-- Start of Dashboard body-->
+	<div class="row-fluid">
+		<!-- Start of previous problems section-->
+		<div class="span9">
+			<!-- Start of posts-->
+			<% @problems.each do |p| %>
+			<h3> <%= p.title %> </h3>
+			<p><%= p.description %></p>
+			<p><%= link_to 'Read more', user_problem_path(@user,p), :class => "btn btn-success", :type => "button"%></p>
+			
+			<% end %>
+			<!-- End of problems-->
+		</div>
+		<!-- End of previous posts section-->
+		<!-- Start of profile photo section-->
+		<div class="span3">
+
+		</div>
+		<!-- End of Dashboard body-->
+</div></div>

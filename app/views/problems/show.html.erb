@@ -1,2 +1,15 @@
-<h1>Problems#show</h1>
-<p>Find me in app/views/problems/show.html.erb</p>
+<% @title = @problem.title%>
+<%= render 'layouts/nav' %>
+<%= render 'layouts/topnav' %>
+
+<div class="home-content">
+	<!-- Start of first post-->
+	<div class="row-fluid">
+		<div class="span9">
+			<p> <%= @problem.description %></p>
+		</div>
+		<div class="span3">
+
+		</div>
+	</div>
+</div>

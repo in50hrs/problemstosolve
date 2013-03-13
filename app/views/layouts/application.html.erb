@@ -3,8 +3,10 @@
 <%= render 'layouts/head' %>
 <body>
 <p class="notice"><%= notice %></p>
-
+<div class="container-narrow">
 <%= yield %>
+<%= render 'layouts/footer' %>
 <%= javascript_include_tag  "jquery", "bootstrap.min" %>
+</div>
 </body>
 </html>
