@@ -1,11 +1,16 @@
 Problemstosolve::Application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-  resources :users  do
+  
+
+resources :users do
   resources :problems
-end
-  match "/problems" => "problems#main" 
+ end
+ 
+ match "/problems" => "problems#main"
+ resources :problems
   get "home/index"
   root :to => 'home#index'
+  
 end
 
 # rake routes - updated - 10:47PM - 13/3/2012

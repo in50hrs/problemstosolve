@@ -30,8 +30,9 @@
 	color: #999999;
 }
 </style>
-
-
+<% if user_signed_in? %>
+	<%= render 'layouts/nav' %>
+	<%end%>
 	<div class="row-fluid">
 		<div class="span4">
 			<%= image_tag "logo.png"%>
@@ -45,16 +46,15 @@
 	</div>
 	<hr>
 	<div class="home-content">
-		<h2>Looking for real world problems to solve? Step right in.</h2>
-		<!-- <a class="btn btn-success" type="button" href="create-account.html"> Create Account</a>
-		<button class="btn btn-info" type="button">Sign in </button> -->
-
+		<% if user_signed_in? %> <h3> Good you already stepped in! </h3><%else%>
+		<h1><small>Looking for real world problems to solve?</small> Step right in</h1>
+		<%end%>
 		<% if user_signed_in? %>
-				<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>	
-				<%else%>
+		<%else%>
+		<%= link_to "Create an Account", new_user_registration_path, :class => "btn btn-large btn btn-success", :type=>"button" %> 
+		<%= link_to "Sign in", new_user_session_path, :class => "btn btn-large btn btn-info", :type=>"button" %> 
 
-<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => "zocial twitter" %> 
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook),:class => "zocial facebook" %> 
-<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), :class => "zocial googleplus" %> 
-				<%end%>
+
+
+		<%end%>
 	</div>

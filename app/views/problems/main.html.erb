@@ -2,36 +2,31 @@
 <%= render 'layouts/nav' %>
 <%= render 'layouts/topnav' %>
 <div class="home-content">
-	<!-- Start of Dashboard body-->
-	<div class="row-fluid">
-		<!-- Start of previous problems section-->
-		<div class="span7">
-			<!-- Start of posts-->
-			<% @problems.each do |p| %>
-			<h2>
-				<%= p.title %>
-			</h2>
-			<p><%= p.description %></p>
+	
+<% @problems.each do |p| %>
+<div class="row-fluid">
+	<div class="span9">
+		<h2>
+			<%= p.title %>
+		</h2>
+		<p><%= p.description %></p>
 
-			<div id="textbox">
-				<p class="alignleft">Category: hurtlocker</p>
-				<p>
-					<% @user = User.where(p.user_id) %>
-					<% @user.each do |n| %>
-					<p class="alignright">Submitted by: <%= n.name%></p>
-					<%end%>
-				</p>
+		<div id="textbox">
+			<p class="alignleft">Category: hurtlocker</p>
+			<p>
+				<% @user = User.where(p.user_id) %>
+				<% @user.each do |n| %>
+				<p class="alignright">Submitted by: <%= n.name%></p>
+				<%end%>
 			</div>
 			<div style="clear: both;"></div>
+			<hr>
 		</div>
-
-		<div class="span3 offset2">
-			<img src= "http://placehold.it/80x80/138caf/ffffff&text=Id.<%= p.id%>" />
+		<div class="span2 ">
+			<img src= "http://placehold.it/80x80/138caf/ffffff&text=Id.<%=p.id%>" />
 		</div>
-		<% end %>
-		<!-- End of problems-->
-	</div>
-	<!-- End of previous posts section-->
+</div>
+<% end %>
 
 	<ul class="pager">
 		<li class="previous">
@@ -41,5 +36,5 @@
 			<a href="#">Newer &rarr;</a>
 		</li>
 	</ul>
-</div>
-<!-- End of Dashboard body-->
+
+

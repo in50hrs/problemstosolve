@@ -1,28 +1,42 @@
-<h2>Sign up</h2>
+<div class="row-fluid">
+  <div class="span7">
+  	<h3>Sign up the usual way</h3>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+		<div><%= f.label :name %><br />
+	  <%= f.text_field :name %></div>
 
-	<div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+	  <div><%= f.label :username %><br />
+	  <%= f.text_field :username %></div>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
+	  <div><%= f.label :email %><br />
+	  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-	<% if f.object.password_required? %>
+	  <div><%= f.label :password %><br />
+	  <%= f.password_field :password %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	  <div><%= f.label :password_confirmation %><br />
+	  <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
 
-	<%end%>
+	  <div><%= f.submit "Sign up",:class=>"btn" %></div>
+	<% end %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+
+  </div>
+
+  <div class="span4">
+	<h3>Or do it the cool way</h3>
+  
+	<p> <%= link_to "Sign up with Twitter", user_omniauth_authorize_path(:twitter), :class => "zocial twitter" %> </p>
+	<br \> 
+	<p><%= link_to "Sign up with Facebook", user_omniauth_authorize_path(:facebook),:class => "zocial facebook" %> </p>
+	<br \>
+	<p><%= link_to "Sign up with Google", user_omniauth_authorize_path(:google_oauth2), :class => "zocial google" %></p>
+	<br \>
+
+  </div>
+</div>
