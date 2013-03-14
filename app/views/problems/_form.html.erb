@@ -1,3 +1,4 @@
+<% if current_user.admin? %>
 <% @title = "New Problem"%>
 <%= render 'layouts/nav' %>
 <%= render 'layouts/topnav' %>
@@ -27,3 +28,10 @@
 	</div>
 </div>
 <!-- End of the wrapper/content-->
+
+<%else%>
+<div class="hero-unit">
+  <center><h3>Sorry honey, you have to be as cool as an admin to do that :) </h3></center>
+</div>
+<%end%>
+

@@ -5,7 +5,7 @@
 	<!-- Start of Dashboard body-->
 	<div class="row-fluid">
 		<!-- Start of previous problems section-->
-		<div class="span12">
+		<div class="span7">
 			<!-- Start of posts-->
 			<% @problems.each do |p| %>
 			<h2>
@@ -23,22 +23,23 @@
 				</p>
 			</div>
 			<div style="clear: both;"></div>
-			<ul class="pager">
-			  <li class="previous">
-			    <a href="#">&larr; Older</a>
-			  </li>
-			  <li class="next">
-			    <a href="#">Newer &rarr;</a>
-			  </li>
-			</ul>
-			<div style="clear: both;"></div>
+		</div>
 
+		<div class="span3 offset2">
+			<img src= "http://placehold.it/80x80/138caf/ffffff&text=Id.<%= p.id%>" />
 		</div>
 		<% end %>
-
-
 		<!-- End of problems-->
 	</div>
 	<!-- End of previous posts section-->
+
+	<ul class="pager">
+		<li class="previous">
+			<a href="#">&larr; Older</a>
+		</li>
+		<li class="next">
+			<a href="#">Newer &rarr;</a>
+		</li>
+	</ul>
 </div>
 <!-- End of Dashboard body-->

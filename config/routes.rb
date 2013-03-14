@@ -3,11 +3,10 @@ Problemstosolve::Application.routes.draw do
   resources :users  do
   resources :problems
 end
-  match "/problems" => "problems#main"
+  match "/problems" => "problems#main" 
   get "home/index"
   root :to => 'home#index'
 end
-
 
 # rake routes - updated - 10:47PM - 13/3/2012
 
