@@ -2,7 +2,7 @@
 <%= render 'layouts/nav' %>
 <%= render 'layouts/topnav' %>
 <div class="home-content">
-	
+
 <% @problems.each do |p| %>
 <div class="row-fluid">
 	<div class="span9">
@@ -14,10 +14,18 @@
 		<div id="textbox">
 			<p class="alignleft">Category: hurtlocker</p>
 			<p>
-				<% @user = User.where(p.user_id) %>
-				<% @user.each do |n| %>
-				<p class="alignright">Submitted by: <%= n.name%></p>
-				<%end%>
+				<p class="alignright">
+					<%if p.twitter_username?%>
+					Submitted by <%= link_to "#{p.name}", "http://twitter.com/#{p.twitter_username}" %>  <br \>
+					<%= link_to image_tag("https://api.twitter.com/1/users/profile_image/#{p.twitter_username}?size=original",:size => "70x70"), "http://twitter.com/#{p.twitter_username}"%>
+
+
+					<%else%>
+					Submitted by: <%= p.name%> <br \>
+					<%= image_tag "pic_placeholder.jpeg" ,  :size=> "60x60"%>
+					<%end%>
+
+				</p>
 			</div>
 			<div style="clear: both;"></div>
 			<hr>
@@ -25,8 +33,11 @@
 		<div class="span2 ">
 			<img src= "http://placehold.it/80x80/138caf/ffffff&text=Id.<%=p.id%>" />
 		</div>
-</div>
-<% end %>
+	</div>
+	
+	
+
+	<% end %>
 
 	<ul class="pager">
 		<li class="previous">
@@ -36,5 +47,5 @@
 			<a href="#">Newer &rarr;</a>
 		</li>
 	</ul>
-
-
+	
+	
