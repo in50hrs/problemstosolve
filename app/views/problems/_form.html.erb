@@ -1,37 +1,51 @@
 <% if current_user.admin? %>
-<% @title = "New Problem"%>
-<%= render 'layouts/nav' %>
-<%= render 'layouts/topnav' %>
-<!-- Start of the wrapper/content-->
-<div class="home-content">
-	<div class="row">
-		<div class="span6">
-			<%= form_for([@user, @problem]) do |f| %>
-			<%= f.label :title %>
-			<br />
-			<%= f.text_field :title%>
-			<br />
+	<% @title = "New Problem"%>
+	<%= render 'layouts/nav' %>
+	<%= render 'layouts/topnav' %>
+	<!-- Start of the wrapper/content-->
+	<div class="home-content">
+		<div class="row">
+			<div class="span6">
+				<%= form_for([@user, @problem]) do |f| %>
+				<%= f.label :title %>
+				<%= f.text_field :title%>
+				<br \>
+				<%= f.label :name_of_the_person %>
+				<%= f.text_field :name%>
+				<br />
 
-			<%= f.label :description %><br />
-			<%= f.text_area :description , :rows => 15,  :class=>"input-block-level"  %>
-			<br />
-			<%= f.label :use_case %><br />
-			<%= f.text_area :use_case , :rows => 10,  :class=>"input-block-level"  %>
-			<br />
-			<%= f.submit "Create post", :class => "btn" %>
+				<%= f.label :description %>
+				<%= f.text_area :description , :rows => 15,  :class=>"input-block-level"  %>
+				<br />
+				<%= f.label :use_case %>
+				<%= f.text_area :use_case , :rows => 10,  :class=>"input-block-level"  %>
+				<br />
 
-			<% end %>
+				<%= f.label :category %>
+				<%= f.select :category	, @categories  %>
+				<br />
+				
+				<%= f.label :twitter_username %>
+				<div class="input-prepend">
+				  <span class="add-on">@</span>
+				<%= f.text_field :twitter_username, :id=>"prependedInput",:class=>"span2", :placeholder=>"Username"%>
+				</div>
+				<br />
+				<br />
+				<%= f.submit "Create post", :class => "btn" %>
 
-			<%= link_to 'Back', problems_path %>
+				<% end %>
 
+				<%= link_to 'Back', problems_path %>
+
+			</div>
 		</div>
 	</div>
-</div>
-<!-- End of the wrapper/content-->
+	<!-- End of the wrapper/content-->
 
-<%else%>
-<div class="hero-unit">
-  <center><h3>Sorry honey, you have to be as cool as an admin to do that :) </h3></center>
-</div>
-<%end%>
+	<%else%>
+	<div class="hero-unit">
+		<center><h3>Sorry honey, you have to be as cool as an admin to do that :) </h3></center>
+	</div>
+	<%end%>
 

@@ -4,6 +4,7 @@ class ProblemsController < ApplicationController
   def new
     @problem = Problem.new
     @user = User.find(params[:user_id])
+    @categories = ["Telecommunications","Manufacturing","Analytics and BI","Automotive","Real Estate","Healthcare","Retail and eCommerce","Enterprise & Productivity","Media / Digital","Entertainment","Travel","Education","Social","Consumer Web","Finance","Utilities"]
   end
 
   def edit

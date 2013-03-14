@@ -11,15 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314045043) do
+ActiveRecord::Schema.define(:version => 20130314085703) do
 
   create_table "problems", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.text     "use_case"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "name"
+    t.string   "twitter_username"
+    t.string   "category"
   end
 
   add_index "problems", ["user_id"], :name => "index_problems_on_user_id"
