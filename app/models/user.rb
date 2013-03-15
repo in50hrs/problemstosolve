@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   
   has_many :problems
   
+  # methods to auth the user and push the data to db.
+  
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
@@ -23,6 +25,8 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
     end
   end
+  
+  # User and session validity.
   
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
@@ -35,6 +39,8 @@ class User < ActiveRecord::Base
     end
   end
 
+
+  
 
   
 end

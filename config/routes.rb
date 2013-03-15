@@ -7,7 +7,6 @@ resources :users do
  end
  
  match "/problems" => "problems#main"
- resources :problems
   get "home/index"
   root :to => 'home#index'
   

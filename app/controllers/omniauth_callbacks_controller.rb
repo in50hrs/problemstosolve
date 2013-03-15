@@ -1,4 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  # Looking where the request is coming from. And accordingly redirecting the user.
   def all
     user = User.from_omniauth(request.env["omniauth.auth"])
     #raise request.env["omniauth.auth"].to_yaml

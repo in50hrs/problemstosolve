@@ -3,7 +3,8 @@
 <%= render 'layouts/topnav' %>
 <div class="home-content">
 
-<% @problems.each do |p| %>
+<!-- Running loop for each post's. But displaying one per page. -->
+<% @problems.first(1).each do |p| %>
 <div class="row-fluid">
 	<div class="span9">
 		<h2>
@@ -28,24 +29,22 @@
 				</p>
 			</div>
 			<div style="clear: both;"></div>
-			<hr>
 		</div>
 		<div class="span2 ">
 			<img src= "http://placehold.it/80x80/138caf/ffffff&text=Id.<%=p.id%>" />
 		</div>
 	</div>
-	
-	
 
 	<% end %>
 
+	<!-- Looking for new and previous posts. -->
 	<ul class="pager">
+		<% @problems.each do |p| %>
 		<li class="previous">
-			<a href="#">&larr; Older</a>
+			<%= link_to("Previous Post", p.previous_post) if p.previous_post %>
 		</li>
 		<li class="next">
-			<a href="#">Newer &rarr;</a>
+			<%= link_to("Next Post", p.next_post) if p.next_post %>
 		</li>
+		<%end%>
 	</ul>
-	
-	

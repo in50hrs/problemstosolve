@@ -1,5 +1,7 @@
 class ProblemsController < ApplicationController
   before_filter :authenticate_user!
+  
+  # No rocket science in the below methods.
 
   def new
     @problem = Problem.new
