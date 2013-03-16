@@ -4,7 +4,7 @@
 	<% if user_signed_in? %>
 	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 	<% if current_user.admin? %>
-	<li><%= link_to "Create New Problem", new_user_problem_path(current_user)%></li>
+	<li><%= link_to "Add a new problem", new_user_problem_path(current_user)%></li>
 	<%end%>	
 	<%end%>
 </ul>

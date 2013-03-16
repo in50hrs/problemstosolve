@@ -12,6 +12,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl'
   gem 'capistrano'
+  gem "rails-erd"
 end
 
 group :production do
