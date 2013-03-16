@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
   
   has_many :problems
   
+  # Extending user ids to usernames
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+  
   # methods to auth the user and push the data to db.
   
   def self.from_omniauth(auth)

@@ -71,6 +71,7 @@ GEM
     faraday (0.8.6)
       multipart-post (~> 1.1)
     ffi (1.4.0)
+    friendly_id (4.0.9)
     hashie (1.2.0)
     highline (1.6.15)
     hike (1.2.1)
@@ -210,6 +211,7 @@ DEPENDENCIES
   devise
   execjs
   factory_girl
+  friendly_id
   jquery-rails
   mysql2
   omniauth-facebook

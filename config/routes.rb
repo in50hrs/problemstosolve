@@ -3,8 +3,10 @@ Problemstosolve::Application.routes.draw do
   
 
 resources :users do
-  resources :problems
+  resources :problems, except: [:show]
  end
+ 
+ resources :problems, only: [:main, :show]
  
  match "/problems" => "problems#main"
   get "home/index"

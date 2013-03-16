@@ -18,8 +18,7 @@ class ProblemsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @problem = @user.problems.find(params[:id])
+    @problem = Problem.find(params[:id])
   end
 
   def main
