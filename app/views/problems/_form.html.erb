@@ -22,7 +22,8 @@
 				<br />
 
 				<%= f.label :category %>
-				<%= f.select :category	, @categories  %>
+				<%= f.select :category, ["Telecommunications","Manufacturing","Analytics and BI","Automotive","Real Estate","Healthcare","Retail and eCommerce","Enterprise & Productivity","Media / Digital","Entertainment","Travel","Education","Social","Consumer Web","Finance","Utilities"], :prompt => 'Select One' %>
+				
 				<br />
 				
 				<%= f.label :twitter_username %>

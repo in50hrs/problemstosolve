@@ -9,8 +9,10 @@
 			<!-- Start of posts-->
 			<% @problems.each do |p| %>
 			<h3> <%= p.title %> </h3>
+			<% if current_user.admin? %><h3 class="muted">(<%= link_to 'Edit', edit_user_problem_path(@user,p) %>)</h3> <%end%>
+			
 			<p><%= p.description %></p>
-			<p><%= link_to 'Read more', user_problem_path(@user,p), :class => "btn btn-success", :type => "button"%></p>
+			<p><%= link_to 'Read more', problem_path(p), :class => "btn btn-success", :type => "button"%></p>
 			
 			<% end %>
 			<!-- End of problems-->

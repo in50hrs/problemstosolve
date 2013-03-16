@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   
   # Extending user ids to usernames
   extend FriendlyId
-  friendly_id :username, use: :slugged
+  friendly_id :username, use: :slugged  
   
   # methods to auth the user and push the data to db.
   
