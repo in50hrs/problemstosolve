@@ -5,10 +5,28 @@
 <div class="home-content">
 	<!-- Start of first post-->
 	<div class="row-fluid">
+		<ul class="breadcrumb">
+		  <li><a href="#">Market Research</a> <span class="divider"> >> </span></li>
+		  <li><a href="#">Blah blah</a> <span class="divider"> >> </span></li>
+		  <li><a href="#">Blah Blah</a> <span class="divider"> >> </span></li>
+		 <li><a href="#">Blah Blah</a> 
+		</ul>
 		<div class="span9">
 			<p> <%= @problem.description %></p>
 		</div>
-		<div class="span3">
+		<div class="span2">
+			
+				<p class="alignleft">Category: <%=@problem.category%></p>
+					<p class="alignright">
+						<%if @problem.twitter_username?%>
+						Submitted by <%= link_to "#{@problem.name}" , "http://twitter.com/#{@problem.twitter_username}" %>  <br \>
+						<%= link_to image_tag("https://api.twitter.com/1/users/profile_image/#{@problem.twitter_username}?size=original",:size => "70x70"), "http://twitter.com/#{@problem.twitter_username}"%>
+
+						<%else%>
+						Submitted by: <%= @problem.name%> <br \>
+						<%= image_tag "pic_placeholder.jpeg" ,  :size=> "60x60"%>
+						<%end%>
+			</div>
 
 		</div>
 	</div>

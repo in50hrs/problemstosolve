@@ -223,8 +223,8 @@ textarea {
 
 body {
   margin: 0 ;
-  font-family: 'Patrick Hand SC', cursive;
-  font-size: 22px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 14px;
   line-height: 25px;
   background: url('/assets/grey.png');
 
@@ -740,7 +740,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: 'Merriweather Sans', sans-serif;
   font-weight: bold;
   line-height: 20px;
   color: #138caf;
@@ -1057,7 +1057,7 @@ input,
 button,
 select,
 textarea {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 20px;
   color:#138caf;

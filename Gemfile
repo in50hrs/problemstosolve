@@ -12,7 +12,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl'
   gem 'capistrano'
-  gem "rails-erd"
+  
 end
 
 group :production do
@@ -39,3 +39,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "friendly_id"
+gem "rails-erd" 

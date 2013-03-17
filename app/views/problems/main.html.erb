@@ -7,10 +7,10 @@
 <% @problems.each do |p| %>
 <div class="row-fluid">
 	<div class="span9">
-		<h1>
-			<%= p.title %>
+		<h2>
 			
-		</h1>
+			<%=link_to "#{p.title}", problem_path(p)%>
+		</h2>
 		<p><%= p.description %></p>
 
 		<div id="textbox">
