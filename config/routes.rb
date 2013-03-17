@@ -10,6 +10,7 @@ resources :users do
  
  match "/problems" => "problems#main"
   get "home/index"
+  get "home/test"
   root :to => 'home#index'
   
 end

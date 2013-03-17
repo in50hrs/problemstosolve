@@ -6,11 +6,12 @@
 	<!-- Start of first post-->
 	<div class="row-fluid">
 		<ul class="breadcrumb">
-		  <li><a href="#">Market Research</a> <span class="divider"> >> </span></li>
-		  <li><a href="#">Blah blah</a> <span class="divider"> >> </span></li>
-		  <li><a href="#">Blah Blah</a> <span class="divider"> >> </span></li>
-		 <li><a href="#">Blah Blah</a> 
+		  <li> <%=link_to "Problems", home_test_path %><span class="divider"> >> </span></li>
+		  <li><%=link_to "Market Research", home_test_path %> <span class="divider"> >> </span></li>
+		  <li><%=link_to "Validation", home_test_path %> <span class="divider"> >> </span></li>
+		 <li><%=link_to "Market Research", home_test_path %>
 		</ul>
+
 		<div class="span9">
 			<p> <%= @problem.description %></p>
 		</div>
@@ -30,4 +31,3 @@
 
 		</div>
 	</div>
-</div>
